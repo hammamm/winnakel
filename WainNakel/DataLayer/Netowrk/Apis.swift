@@ -8,6 +8,6 @@
 
 import Foundation
 
-class Url {
-    static let getRandomQuote = "/quotes/random"
+class Apis {
+    static let getRandomRestaurant = "GenerateFS.php"
 }

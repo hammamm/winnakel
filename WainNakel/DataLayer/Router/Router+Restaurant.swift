@@ -6,33 +6,33 @@
 //
 
 import Foundation
+import CoreLocation
 
 extension Router {
     
-    enum QuoteRouter: MyEndpoint {
+    enum RestaurantRouter: MyEndpoint {
         
-        case getRandomQuote
+        case getRandomRestaurant(location: CLLocationCoordinate2D)
         
         var serviceUrl: String {
             switch self {
-            case .getRandomQuote:
-                return Url.getRandomQuote
+            case .getRandomRestaurant(let location):
+                return Apis.getRandomRestaurant + "?uid=\(location.longitude.description),\(location.latitude.description)&get_param =value"
             }
         }
-        
+
         var parameters: [String : Any]? {
             switch self {
-            case .getRandomQuote:
+            case .getRandomRestaurant:
                 return nil
             }
         }
-        
+
         var method: HTTPMethod{
             switch self {
-            case .getRandomQuote:
+            case .getRandomRestaurant:
                     return .get
             }
         }
-        
     }
 }

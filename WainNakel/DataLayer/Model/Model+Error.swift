@@ -11,12 +11,15 @@ struct ModelError<T: Codable> : Codable {
     let status: Int?
     let message: T
     let data: [String?]?
-    
-    enum CodingKeys: String, CodingKey {
-        case status = "status"
-        case message = "message"
-        case data = "data"
+        
+    func getError(_ keys: [String]?) -> String {
+        if let msg = message as? MultiError{
+            return msg.getErrorMessage(keys) ?? errorDescription()
+        }else{
+            return "Something wrong"
+        }
     }
+
 }
 
 extension ModelError: Error, LocalizedError {

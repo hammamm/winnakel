@@ -7,30 +7,31 @@
 //
 
 import Foundation
+import CoreLocation
 
-class QuoteModel: Codable {
-    var id, en, author: String
+typealias Location = (lat: String, long: String)
+// MARK: - RestaurantModel
+class RestaurantModel: Codable {
+    let error, name, id: String
+    let link: String
+    let cat, catId, rating, lat: String
+    let lon, Ulat, Ulon, welcomeOpen: String
+    let image: [String]
+}
+
+extension RestaurantModel{
+    var rateAndCat: String{
+        cat + " - " + rating + "/" + "10"
+    }
     
-    init(id: String, en: String, author: String) {
-        self.id = id
-        self.en = en
-        self.author = author
+    var location: Location{
+        return (lat, lon)
     }
 }
 
-extension QuoteModel{
-    var getQuote: String{
-        return "Quote: \n\n" + en
-    }
-    
-    var getAuthor: String{
-        return "Author: " + author
-    }
-}
-
-extension QuoteModel{
-    static func getRandomQuote(_ completion: @escaping Response<QuoteModel,None>) -> Void {
-        _getRandomQuote() { (response) in
+extension RestaurantModel{
+    static func getRandomRestaurant(_ location: CLLocationCoordinate2D, completion: @escaping Response<RestaurantModel,ModelError<MultiError>>) -> Void {
+        _getRandomRestaurant(location: location) { (response) in
             switch response{
             case .success(let model):
                 completion(.success(model))
@@ -42,7 +43,7 @@ extension QuoteModel{
         }
     }
     
-    private static func _getRandomQuote(_ completion: @escaping Response<QuoteModel,None>) -> Void {
-        Router.QuoteRouter.getRandomQuote.request(completion: completion)
+    private static func _getRandomRestaurant(location: CLLocationCoordinate2D, completion: @escaping Response<RestaurantModel,ModelError<MultiError>>) -> Void {
+        Router.RestaurantRouter.getRandomRestaurant(location: location).request(completion: completion)
     }
 }

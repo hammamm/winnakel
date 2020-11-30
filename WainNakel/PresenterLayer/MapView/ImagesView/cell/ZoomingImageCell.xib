@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ZoomingImageCell" customModule="WainNakel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="583" height="454"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="583" height="454"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAp-IU-rhD">
+                        <rect key="frame" x="0.0" y="0.0" width="583" height="454"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jsB-os-F3b">
+                                <rect key="frame" x="0.0" y="0.0" width="583" height="454"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="jsB-os-F3b" firstAttribute="leading" secondItem="DAp-IU-rhD" secondAttribute="leading" id="4Uo-Ea-6an"/>
+                            <constraint firstAttribute="trailing" secondItem="jsB-os-F3b" secondAttribute="trailing" id="Bp3-0a-uS7"/>
+                            <constraint firstItem="jsB-os-F3b" firstAttribute="centerY" secondItem="DAp-IU-rhD" secondAttribute="centerY" id="IhI-jL-fKx"/>
+                            <constraint firstAttribute="bottom" secondItem="jsB-os-F3b" secondAttribute="bottom" id="rsG-vX-Jxe"/>
+                            <constraint firstItem="jsB-os-F3b" firstAttribute="centerX" secondItem="DAp-IU-rhD" secondAttribute="centerX" id="wrg-Sg-Cxi"/>
+                            <constraint firstItem="jsB-os-F3b" firstAttribute="top" secondItem="DAp-IU-rhD" secondAttribute="top" id="zxX-uV-lWZ"/>
+                        </constraints>
+                    </scrollView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="DAp-IU-rhD" secondAttribute="trailing" id="0Tc-hZ-vRW"/>
+                <constraint firstItem="DAp-IU-rhD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2NT-Xz-nqh"/>
+                <constraint firstItem="DAp-IU-rhD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bW9-Yp-WOc"/>
+                <constraint firstAttribute="bottom" secondItem="DAp-IU-rhD" secondAttribute="bottom" id="rkI-NM-4rO"/>
+            </constraints>
+            <size key="customSize" width="583" height="454"/>
+            <connections>
+                <outlet property="scrollView" destination="DAp-IU-rhD" id="4tB-R7-G4G"/>
+                <outlet property="zoomingImage" destination="jsB-os-F3b" id="soY-VH-hH1"/>
+            </connections>
+            <point key="canvasLocation" x="442.75362318840581" y="261.16071428571428"/>
+        </collectionViewCell>
+    </objects>
+</document>

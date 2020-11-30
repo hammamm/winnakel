@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuggestingView" customModule="WainNakel" customModuleProvider="target">
+            <connections>
+                <outlet property="suggestingButton" destination="Zys-RD-ijg" id="1ep-9p-OnD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="وين ناكل ؟ " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grE-Mb-FFP">
+                    <rect key="frame" x="71.5" y="213.5" width="177.5" height="53"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rij-1J-f1e">
+                    <rect key="frame" x="0.0" y="266.5" width="320" height="213.5"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zys-RD-ijg">
+                            <rect key="frame" x="85" y="92" width="150" height="30"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="TEU-df-8UI"/>
+                            </constraints>
+                            <state key="normal" title="اقترح">
+                                <color key="titleColor" red="0.29803921570000003" green="0.70980392160000005" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="didTapOnSuggest:" destination="-1" eventType="touchUpInside" id="fVh-kO-fv5"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Zys-RD-ijg" firstAttribute="centerY" secondItem="rij-1J-f1e" secondAttribute="centerY" id="YZG-Qh-xHw"/>
+                        <constraint firstItem="Zys-RD-ijg" firstAttribute="centerX" secondItem="rij-1J-f1e" secondAttribute="centerX" id="vuB-9i-IUh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.29803921570000003" green="0.70980392160000005" blue="0.73725490199999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rij-1J-f1e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8Vf-Cu-dfM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rij-1J-f1e" secondAttribute="bottom" id="HK0-e2-wNa"/>
+                <constraint firstItem="grE-Mb-FFP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="WYc-Qq-jch"/>
+                <constraint firstItem="rij-1J-f1e" firstAttribute="top" secondItem="grE-Mb-FFP" secondAttribute="bottom" id="YSg-Tq-CAi"/>
+                <constraint firstItem="grE-Mb-FFP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jFF-bz-Cvx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rij-1J-f1e" secondAttribute="trailing" id="kYj-qP-lEE"/>
+            </constraints>
+            <point key="canvasLocation" x="-9" y="33"/>
+        </view>
+    </objects>
+</document>

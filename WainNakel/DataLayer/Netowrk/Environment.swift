@@ -28,9 +28,9 @@ enum Environment {
     private var url: String {
         switch self {
         case .production:
-            return "https://programming-quotes-api.herokuapp.com"
+            return "https://wainnakel.com/api/v1/"
         case .development:
-            return "https://programming-quotes-api.herokuapp.com"
+            return "https://wainnakel.com/api/v1/"
         }
     }
 }

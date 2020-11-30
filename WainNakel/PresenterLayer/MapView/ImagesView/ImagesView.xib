@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImagesView" customModule="WainNakel" customModuleProvider="target">
+            <connections>
+                <outlet property="closeView" destination="UQW-Zo-olK" id="Dr3-U2-cOs"/>
+                <outlet property="collectionView" destination="uCq-co-Xqf" id="5bp-x0-8nQ"/>
+                <outlet property="pageControl" destination="cl3-gE-y29" id="91K-4x-jQQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uCq-co-Xqf">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ghZ-9b-goT">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="cl3-gE-y29">
+                    <rect key="frame" x="165" y="814.5" width="84.5" height="27.5"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="currentPageIndicatorTintColor" red="0.29803921570000003" green="0.70980392160000005" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yui-6s-b5K">
+                    <rect key="frame" x="364" y="54" width="30" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQW-Zo-olK">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <state key="normal" image="close"/>
+                            <connections>
+                                <action selector="didTapOnClose" destination="-1" eventType="touchUpInside" id="YBq-yf-ifn"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.20079730309999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="UQW-Zo-olK" secondAttribute="trailing" id="2qE-2n-a69"/>
+                        <constraint firstItem="UQW-Zo-olK" firstAttribute="top" secondItem="yui-6s-b5K" secondAttribute="top" id="Hks-1K-Ww8"/>
+                        <constraint firstAttribute="height" constant="30" id="ORU-Mg-EWQ"/>
+                        <constraint firstAttribute="width" constant="30" id="jAV-Rb-F1s"/>
+                        <constraint firstItem="UQW-Zo-olK" firstAttribute="leading" secondItem="yui-6s-b5K" secondAttribute="leading" id="wHL-8l-LBZ"/>
+                        <constraint firstAttribute="bottom" secondItem="UQW-Zo-olK" secondAttribute="bottom" id="zPM-bH-Z1f"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uCq-co-Xqf" secondAttribute="trailing" id="9tn-fC-jWi"/>
+                <constraint firstItem="cl3-gE-y29" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="E6a-km-g3I"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cl3-gE-y29" secondAttribute="bottom" constant="20" id="Mdf-Nc-U5b"/>
+                <constraint firstItem="uCq-co-Xqf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TJE-8n-qqi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yui-6s-b5K" secondAttribute="trailing" constant="20" id="Yc8-EP-1MJ"/>
+                <constraint firstItem="uCq-co-Xqf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fgx-0e-fCc"/>
+                <constraint firstItem="yui-6s-b5K" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="rbM-E5-qtX"/>
+                <constraint firstAttribute="bottom" secondItem="uCq-co-Xqf" secondAttribute="bottom" id="yIM-Be-iEB"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="5YM-NA-gM0" appends="YES" id="rFa-9L-hK2"/>
+            </connections>
+            <point key="canvasLocation" x="-55.072463768115945" y="108.48214285714285"/>
+        </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="5YM-NA-gM0">
+            <connections>
+                <action selector="handleGesture:" destination="-1" id="Hak-En-RDf"/>
+            </connections>
+        </panGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="close" width="16" height="16"/>
+    </resources>
+</document>
