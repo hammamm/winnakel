@@ -38,6 +38,7 @@ class BaseView: UIViewController {
     }
     
     func baseSetupForUI() {
+        overrideUserInterfaceStyle = .light
         navigationController?.navigationBar.barTintColor = .primary
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.tintColor = .white
@@ -136,6 +137,10 @@ class BaseView: UIViewController {
             }
         }
     }
+    
+    func refreshUi() {
+        
+    }
 }
 
 extension BaseView: UIViewControllerTransitioningDelegate {
@@ -165,11 +170,7 @@ extension BaseView: BaseViewProtocol{
         let loading = loadingView()
         start ? loading.startAnimation() : loading.stopAnimation()
     }
-    
-    func refreshUi() {
         
-    }
-    
     func alert(title: String, buttonTitle: String, body: String, completion: (() -> Void)?) -> Void {
         alert(.failure(true, buttonTitle: buttonTitle, completion: completion), title: title, body: body)
     }

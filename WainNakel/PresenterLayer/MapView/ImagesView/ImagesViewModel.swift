@@ -44,7 +44,7 @@ final class ImagesViewModel: BaseViewModel {
             break
         }
     }
-    
+        
     func cell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ZoomingImageCell.identifier, for: indexPath) as? ZoomingImageCell else { return UICollectionViewCell() }
         if let image = images?[indexPath.item]{

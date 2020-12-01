@@ -12,4 +12,16 @@ extension UIView{
         self.layer.cornerRadius = (self.frame.width / 2)
         self.layer.masksToBounds = true
     }
+    
+    func setWidth(width:CGFloat) {
+        var frame:CGRect = self.frame
+        frame.size.width = width
+        self.frame = frame
+    }
+    
+    func setHeight(height:CGFloat) {
+        var frame:CGRect = self.frame
+        frame.size.height = height
+        self.frame = frame
+    }
 }

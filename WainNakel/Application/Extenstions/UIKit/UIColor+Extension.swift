@@ -3,7 +3,7 @@
 //  WainNakel
 //
 //  Created by hammam abdulaziz on 12/04/1442 AH.
-//
+//  Copyright © 1441 yoma. All rights reserved.
 
 import UIKit
 

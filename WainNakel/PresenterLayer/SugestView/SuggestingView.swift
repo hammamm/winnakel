@@ -11,13 +11,27 @@ final class SuggestingView: BaseView {
 
     @IBOutlet weak var suggestingButton: UIButton!
     
+    let viewModel = SuggestingViewModel()
+    var didGetRestaurant: ((RestaurantModel?) -> Void)?
+    
     @IBAction func didTap(OnSuggest sender: UIButton) -> Void {
-        
+        dismiss(animated: true, completion: nil)
+        viewModel.configureLocation()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.view = self
     }
+    
+    override func refreshUi() {
+        defer{
+            didGetRestaurant?(viewModel.restuarnat)
+        }
+        dismiss(animated: true, completion: nil)
+    }
+}
 
-
+extension SuggestingView: MapViewProtocol{
+    
 }
