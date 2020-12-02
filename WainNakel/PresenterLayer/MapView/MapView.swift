@@ -8,7 +8,9 @@
 import UIKit
 import MapKit
 
-protocol MapViewProtocol: BaseViewProtocol {}
+protocol MapViewProtocol: BaseViewProtocol {
+    func refreshData() -> Void
+}
 
 final class MapView: BaseView {
     //MARK:- OUTLETS
@@ -32,7 +34,7 @@ final class MapView: BaseView {
         let controller = ImagesView()
         controller.viewModel._interactor = interactor
         controller.transitioningDelegate = self
-        controller.modalPresentationStyle = .overFullScreen
+        controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .coverVertical
         present(controller, animated: true, completion: nil)
     }
@@ -83,7 +85,10 @@ final class MapView: BaseView {
         controller.modalPresentationStyle = .overFullScreen
         present(controller, animated: false, completion: nil)
     }
-    override func refreshUi() {
+}
+
+extension MapView: MapViewProtocol{
+    func refreshData() {
         if let resturant = viewModel.restuarnat{
             if let annotation = map.markPin(restaurant: resturant){
                 map.removeAnnotations(map.annotations)
@@ -91,10 +96,6 @@ final class MapView: BaseView {
             }
         }
     }
-}
-
-extension MapView: MapViewProtocol{
-    
 }
 
 extension MapView: MKMapViewDelegate{

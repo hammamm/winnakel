@@ -137,10 +137,6 @@ class BaseView: UIViewController {
             }
         }
     }
-    
-    func refreshUi() {
-        
-    }
 }
 
 extension BaseView: UIViewControllerTransitioningDelegate {
@@ -173,5 +169,9 @@ extension BaseView: BaseViewProtocol{
         
     func alert(title: String, buttonTitle: String, body: String, completion: (() -> Void)?) -> Void {
         alert(.failure(true, buttonTitle: buttonTitle, completion: completion), title: title, body: body)
+    }
+    
+    func refreshUi() {
+        
     }
 }

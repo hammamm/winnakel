@@ -12,20 +12,23 @@ import CoreLocation
 typealias Location = (lat: String, long: String)
 // MARK: - RestaurantModel
 class RestaurantModel: Codable {
-    let error, name, id: String
-    let link: String
-    let cat, catId, rating, lat: String
-    let lon, Ulat, Ulon, welcomeOpen: String
-    let image: [String]
+    let error, name, id: String?
+    let link: String?
+    let cat, catId, rating, lat: String?
+    let lon, Ulat, Ulon, welcomeOpen: String?
+    let image: String?
 }
 
 extension RestaurantModel{
     var rateAndCat: String{
-        cat + " - " + rating + "/" + "10"
+        (cat ?? "") + " - \(rating ?? "10")/10"
     }
     
-    var location: Location{
-        return (lat, lon)
+    var location: Location?{
+        if let lat = lat, let lon = lon{
+            return (lat, lon)
+        }
+        return nil
     }
 }
 

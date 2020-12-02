@@ -23,7 +23,7 @@ final class Annotation: NSObject,MKAnnotation{
 
 extension MKMapView{
     func markPin(restaurant: RestaurantModel, latDetail: CLLocationDegrees = 0.005, longDetail: CLLocationDegrees = 0.005) -> MKAnnotation?{
-        if let lat = Double(restaurant.lat), let long = Double(restaurant.lon){
+        if let lat = Double(restaurant.lat ?? ""), let long = Double(restaurant.lon ?? ""){
             let center = CLLocationCoordinate2D(latitude: lat, longitude: long)
             setRegion(MKCoordinateRegion(center: center, latitudinalMeters: latDetail, longitudinalMeters: longDetail), animated: true)
             return Annotation(restaurant: restaurant, location: center)

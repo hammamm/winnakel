@@ -16,7 +16,7 @@ class MapViewModel: BaseViewModel {
 
     var restuarnat: RestaurantModel?{
         didSet{
-            view?.refreshUi()
+            view?.refreshData()
         }
     }
     

@@ -38,6 +38,7 @@ final class ImagesView: BaseView {
     
     //MARK:- METHODES
     func configuration() {
+        viewModel.view = self
         closeView.setRounded()
         collectionView.register(UINib(nibName: ZoomingImageCell.identifier, bundle: nil), forCellWithReuseIdentifier: ZoomingImageCell.identifier)
         pageControl.numberOfPages = viewModel.images?.count ?? 0

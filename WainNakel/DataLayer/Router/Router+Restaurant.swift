@@ -17,7 +17,7 @@ extension Router {
         var serviceUrl: String {
             switch self {
             case .getRandomRestaurant(let location):
-                return Keys.Api.getRandomRestaurant + "?uid=\(location.longitude.description),\(location.latitude.description)&get_param =value"
+                return Keys.Api.getRandomRestaurant + "?uid=\(location.longitude.description),\(location.latitude.description)&get_param=value"
             }
         }
 
